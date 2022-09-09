@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route, NavLink} from "react-router-dom";
 // import PropTypes from 'prop-types';
 import Home from '../pages/Home';
 import Movies from '../pages/Movies';
