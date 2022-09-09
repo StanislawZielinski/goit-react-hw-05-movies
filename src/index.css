@@ -7,9 +7,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(150, 150, 150)
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.nav {
+  font-size: 30px;
+  margin: 30px 0px 10px 30px;
+  width: 100%;
+  display: flex;
+  justify-content:flex-start;
+  gap: 40px;
 }
