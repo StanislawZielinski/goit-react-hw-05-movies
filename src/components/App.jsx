@@ -18,11 +18,11 @@ export const App = () => {
       // }}
     >
       <nav className='nav'>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/goit-react-hw-05-movies">Home</NavLink>
           <NavLink to="/movies">Movies</NavLink>
       </nav>
       <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/goit-react-hw-05-movies" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="*" element={<NotFound />} />
       </Routes>
