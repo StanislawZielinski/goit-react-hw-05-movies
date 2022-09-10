@@ -6,20 +6,12 @@ import Movies from '../pages/Movies';
 import NotFound from '../pages/NotFound';
 
 export const App = () => {
+  
   return (
-    <div
-      // style={{
-      //   height: '100vh',
-      //   display: 'flex',
-      //   justifyContent: 'center',
-      //   alignItems: 'center',
-      //   fontSize: 40,
-      //   color: '#010101'
-      // }}
-    >
+    <div className='container'>
       <nav className='nav'>
-          <NavLink to="/goit-react-hw-05-movies">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
+          <NavLink className='navLink' to="/goit-react-hw-05-movies">Home</NavLink>
+          <NavLink className='navLink' to="/movies">Movies</NavLink>
       </nav>
       <Routes>
           <Route path="/goit-react-hw-05-movies" element={<Home />} />
