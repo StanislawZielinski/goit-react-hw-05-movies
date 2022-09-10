@@ -1,16 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import fetch from 'services/api';
-import TrendingList from 'components/TrendingList/TrendingList';
+import fetchTrendings from 'services/fetchTrendings';
+import List from 'components/List/List';
 // import PropTypes from 'prop-types'
 const Home = () => {
   const [trendingList, setTrendingList] = useState([]);
 
   async function fetchTrending () {
     try {
-    const responseData = await fetch();
-      console.log(responseData);
+    const responseData = await fetchTrendings();
       setTrendingList(responseData);
     }
     catch (error) {
@@ -32,7 +31,7 @@ const Home = () => {
   return (
     <div>
       <h2>Trending today</h2>
-      <TrendingList children={renderTrending(trendingList)}></TrendingList>
+      <List children={renderTrending(trendingList)}></List>
     </div>
   )
 }
