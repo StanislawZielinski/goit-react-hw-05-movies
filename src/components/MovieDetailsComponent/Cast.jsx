@@ -23,7 +23,7 @@ const Cast = props => {
   const renderCast = (cast) => {
     return cast.map(
       elem =>
-        <li>
+        <li key={elem.id}>
           <div className='CastMiniature'><img src={`https://image.tmdb.org/t/p/original${elem.profile_path}`} alt="this actor has no profile"/></div>      
           <p>{elem.name}</p>
           <p>{elem.character}</p>
