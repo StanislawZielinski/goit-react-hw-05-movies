@@ -1,4 +1,5 @@
 import MovieDetailsComponent from 'components/MovieDetailsComponent/MovieDetailsComponent';
+import { Outlet, Link } from 'react-router-dom';
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -13,7 +14,7 @@ const MovieDetails = props => {
     async function fetchMovie(id) {
         try {
             const response = await getMovieById(id);
-                setMovieDetails(response);
+            setMovieDetails(response);
         } catch (error) {
             console.log(error)
         }
@@ -25,6 +26,18 @@ const MovieDetails = props => {
   return (
     <div>
           <MovieDetailsComponent movieDetails={movieDetails} />
+          <div className='wrapperAdditionalInfo'>
+              <p>Additional Information</p>
+              <ul className='addInfoList'>
+                <li>
+                    <Link to="cast">Cast</Link>
+                </li>
+                <li>
+                    <Link to="review">Review</Link>
+                </li>
+              </ul>
+              <Outlet />
+          </div>
     </div>
   )
 }

@@ -4,7 +4,9 @@ import { Routes, Route, NavLink} from "react-router-dom";
 import Home from '../pages/Home';
 import Movies from '../pages/Movies';
 import NotFound from '../pages/NotFound';
-import MovieDetails from 'pages/MovieDetails';
+import MovieDetails from '../pages/MovieDetails';
+import Cast from '../components/MovieDetailsComponent/Cast';
+import Review from '../components/MovieDetailsComponent/Review';
 
 export const App = () => {
   
@@ -15,10 +17,13 @@ export const App = () => {
           <NavLink className='navLink' to="/movies">Movies</NavLink>
       </nav>
       <Routes>
-          <Route path="/goit-react-hw-05-movies" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/movies/:id" element={<MovieDetails />} />
-          <Route path="*" element={<NotFound />} />
+        <Route path="/goit-react-hw-05-movies" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:id" element={<MovieDetails />}>
+          <Route path="cast" element={<Cast/>}></Route>
+          <Route path="review" element={<Review/>} ></Route>
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

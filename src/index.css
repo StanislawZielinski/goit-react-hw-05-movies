@@ -36,6 +36,7 @@ code {
 
 .navLink {
     text-decoration: none;
+    color: black;
 }
 
 .List {
@@ -45,9 +46,6 @@ code {
   margin-bottom: 4px;
 }
 
-.navLink {
-  color: black;
-}
 .active {
   color: red
 }
@@ -74,4 +72,33 @@ code {
       color: white;
       cursor: pointer;
 }
+
+.wrapper {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+.posterThumb {
+  max-width: 250px;
+  height: auto;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.wrapperAdditionalInfo {
+  margin-top: 10px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+ .addInfoList {
+  list-style-type: none;
+  text-decoration: none;
+  margin-left: 0;
+ }
 
