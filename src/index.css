@@ -102,3 +102,7 @@ img {
   margin-left: 0;
  }
 
+.CastMiniature {
+  max-width: 100px;
+  height: auto;
+}
