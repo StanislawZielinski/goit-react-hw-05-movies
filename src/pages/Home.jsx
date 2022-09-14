@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import fetchTrendings from 'services/fetchTrendings';
 import List from 'components/List/List';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // import PropTypes from 'prop-types'
 const Home = () => {
   const [trendingList, setTrendingList] = useState([]);
+  const location = useLocation();
   async function fetchTrending () {
     try {
     const responseData = await fetchTrendings();
@@ -24,7 +25,7 @@ const Home = () => {
   const renderTrending = (trendingList) => {
     return trendingList.map(
         elem =>
-        <Link to={`/movies/${elem.id}`} key={elem.id}>
+        <Link to={`/goit-react-hw-05-movies/movies/${elem.id}`} key={elem.id} state = {{ from: location }}>
           <li className="trendingElem" key={elem.id} >
             {elem.title} {elem.name}
           </li>

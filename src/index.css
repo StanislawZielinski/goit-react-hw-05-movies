@@ -106,3 +106,10 @@ img {
   max-width: 100px;
   height: auto;
 }
+
+.image_placeholder {
+  background-image: url("https://cdn2.iconfinder.com/data/icons/avatars-60/5985/34-Father-512.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

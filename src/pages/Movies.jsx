@@ -1,10 +1,10 @@
 import SearchBar from 'components/SearchBar/SearchBar';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Audio } from 'react-loader-spinner';
 import fetch from 'services/fetch';
 import List from 'components/List/List';
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useLocation } from "react-router-dom";
 // import PropTypes from 'prop-types'
 
 const Movies = () => {
@@ -13,7 +13,7 @@ const Movies = () => {
   const [searchValue, setSearchValue] = useState('');
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(error)
@@ -48,12 +48,20 @@ const Movies = () => {
         finally {
             setIsSpinnerLoading(false);
         }   
-    }
-
+  }
+  const query = searchParams.get("query");
+  useEffect(() => {
+    if (query !== null) {
+    fetchMovies(query)
+    };
+    return
+  }, [query]);
+  
+  const location = useLocation();
   const renderMovies = (movieList) => {
     return movieList.map(
       elem =>
-        <Link to={`${elem.id}`} key={elem.id}>
+        <Link to={`${elem.id}`} key={elem.id} state={{ from: location }}>
           <li className="trendingElem" key={elem.id} >
             {elem.title} {elem.name}
           </li>
