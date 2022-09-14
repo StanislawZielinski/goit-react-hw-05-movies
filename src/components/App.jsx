@@ -1,16 +1,16 @@
-import React from 'react';
+import React, {lazy} from 'react';
 import { Routes, Route } from "react-router-dom";
 // import PropTypes from 'prop-types';
-import Home from '../pages/Home';
-import Movies from '../pages/Movies';
-import MovieDetails from '../pages/MovieDetails';
-import Cast from '../components/MovieDetailsComponent/Cast';
-import Review from '../components/MovieDetailsComponent/Review';
 import SharedLayout from 'pages/SharedLayout';
+const Home = lazy(()=>import('../pages/Home'));
+const Movies = lazy(() => import('../pages/Movies'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails'));
+const Cast = lazy(()=> import('../components/MovieDetailsComponent/Cast'));
+const Review = lazy(()=>import('../components/MovieDetailsComponent/Review'));
+
 
 export const App = () => {
   return (
-
       <Routes>
         <Route path="/goit-react-hw-05-movies" element={<SharedLayout />}>
           <Route index element={<Home />} />
