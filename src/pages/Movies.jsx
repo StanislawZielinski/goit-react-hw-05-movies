@@ -54,7 +54,6 @@ const Movies = () => {
     if (query !== null) {
     fetchMovies(query)
     };
-    return
   }, [query]);
   
   const location = useLocation();
