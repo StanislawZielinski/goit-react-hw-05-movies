@@ -11,7 +11,6 @@ const Review = props => {
   async function fetchCastReview(id) {
       try {
         const response = await fetchReview(id);
-        console.log(response)
         setReview(response);
       } catch (error) {
           console.log(error)

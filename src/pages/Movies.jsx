@@ -54,7 +54,7 @@ const Movies = () => {
     if (query !== null) {
     fetchMovies(query)
     };
-  }, []);
+  }, [query]);
   
   const location = useLocation();
   const renderMovies = (movieList) => {
@@ -80,7 +80,7 @@ const Movies = () => {
 Movies.propTypes = {
   onSubmit: PropTypes.func,
   visible: PropTypes.bool,
-  children: PropTypes.element,
+  children: PropTypes.array,
 }
 
 export default Movies

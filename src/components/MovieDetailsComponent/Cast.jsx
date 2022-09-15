@@ -11,7 +11,6 @@ const Cast = props => {
   async function fetchCastComponent(id) {
       try {
         const response = await fetchCast(id);
-        console.log(response)
         setCast(response);
       } catch (error) {
           console.log(error)

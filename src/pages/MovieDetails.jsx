@@ -24,7 +24,6 @@ const MovieDetails = props => {
 
     const location = useLocation();
     const backLinkHref = location.state?.from ?? "/goit-react-hw-05-movies/movies";
-    console.log(location);
   return (
       <div>
           <Link to={backLinkHref}>Go Back</Link>

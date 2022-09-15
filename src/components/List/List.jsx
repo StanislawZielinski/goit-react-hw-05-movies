@@ -10,7 +10,7 @@ const TrendingList = ({children}) => {
 }
 
 TrendingList.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.array,
 }
 
 export default TrendingList
