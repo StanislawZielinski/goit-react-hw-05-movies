@@ -30,31 +30,32 @@ const Movies = () => {
     return (setSearchValue(''))
   }
 
-    async function fetchMovies(searchValue) {
-        setIsSpinnerLoading(true);
-        try {
-            const response = await fetch(searchValue);
-            if (response.length > 0) {
-              setMovieList([...response]);
-              setSearchParams({query:searchValue})
-            }
-            else {
-                alert("Please try again. Minimum number of characters - 2 ")
-            }
-        } catch (error) {
-            setError(error);
-            console.log(error)
-        }
-        finally {
-            setIsSpinnerLoading(false);
-        }   
+  async function fetchMovies(searchValue) {
+    setIsSpinnerLoading(true);
+    try {
+      const response = await fetch(searchValue);
+      if (response.length > 0) {
+        setMovieList([...response]);
+        setSearchParams({ query: searchValue })
+      }
+      else {
+        alert("Please try again. Minimum number of characters - 2 ")
+      }
+    } catch (error) {
+      setError(error);
+      console.log(error)
+    }
+    finally {
+      setIsSpinnerLoading(false);
+    }
   }
-  const query = searchParams.get("query");
+  
   useEffect(() => {
+    const query = searchParams.get("query");
     if (query !== null) {
-    fetchMovies(query)
+      fetchMovies(query)
     };
-  }, []);
+  }, [searchParams]); //eslint-disable-line react-hooks/exhaustive-deps
   
   const location = useLocation();
   const renderMovies = (movieList) => {
