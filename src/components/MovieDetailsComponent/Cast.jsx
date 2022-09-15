@@ -18,7 +18,7 @@ const Cast = props => {
   }
   useEffect(() => {
     fetchCastComponent(id);
-  }, []);
+  }, [id]);
   const renderCast = (cast) => {
     return cast.map(
       elem =>

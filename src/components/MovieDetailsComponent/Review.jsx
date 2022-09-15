@@ -18,7 +18,7 @@ const Review = props => {
   }
   useEffect(() => {
     fetchCastReview(id);
-  }, []);
+  }, [id]);
   const renderReview = (review) => {
     return review.map(
       elem =>
