@@ -55,7 +55,7 @@ const Movies = () => {
     if (query !== null) {
       fetchMovies(query)
     };
-  }, [searchParams]); //eslint-disable-line react-hooks/exhaustive-deps
+  }, [searchParams]); // eslint-disable-line react-hooks/exhaustive-deps
   
   const location = useLocation();
   const renderMovies = (movieList) => {
