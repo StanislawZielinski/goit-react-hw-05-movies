@@ -54,7 +54,7 @@ const Movies = () => {
     if (query !== null) {
     fetchMovies(query)
     };
-  }, [(query)]);
+  }, []);
   
   const location = useLocation();
   const renderMovies = (movieList) => {
