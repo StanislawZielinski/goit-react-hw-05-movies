@@ -2,7 +2,7 @@ import React from 'react';
 import fetchReview from 'services/fetchReview';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const Review = props => {
   const { id } = useParams();
@@ -40,7 +40,8 @@ const Review = props => {
 }
 
 Review.propTypes = {
-
+  review: PropTypes.array,
+  renderReview: PropTypes.element,
 }
 
 export default Review

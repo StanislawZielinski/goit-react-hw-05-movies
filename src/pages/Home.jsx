@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import fetchTrendings from 'services/fetchTrendings';
 import List from 'components/List/List';
 import { Link, useLocation } from 'react-router-dom';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 const Home = () => {
   const [trendingList, setTrendingList] = useState([]);
   const location = useLocation();
@@ -40,7 +40,7 @@ const Home = () => {
 }
 
 Home.propTypes = {
-
+  children: PropTypes.element.isRequired
 }
 
 export default Home

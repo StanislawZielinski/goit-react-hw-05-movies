@@ -5,8 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams, useLocation } from "react-router-dom";
 import getMovieById from 'services/getMovieById';
-
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const MovieDetails = props => {
     const { id } = useParams();
@@ -47,7 +46,9 @@ const MovieDetails = props => {
 }
 
 MovieDetails.propTypes = {
-
+    backLinkHref: PropTypes.string,
+    movieDetails: PropTypes.object,
+    state: PropTypes.string,
 }
 
 export default MovieDetails

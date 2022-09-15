@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const MovieDetailsComponent = ({ movieDetails }) => {
   const { title, vote_average, overview, genres, poster_path, release_date } = movieDetails;
@@ -20,7 +20,12 @@ const MovieDetailsComponent = ({ movieDetails }) => {
 }
 
 MovieDetailsComponent.propTypes = {
-
+  title: PropTypes.string,
+  vote_average: PropTypes.number,
+  overview: PropTypes.string,
+  genres: PropTypes.object,
+  poster_path: PropTypes.string,
+  release_date: PropTypes.string,
 }
 
 export default MovieDetailsComponent

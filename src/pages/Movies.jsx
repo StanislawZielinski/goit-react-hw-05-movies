@@ -5,7 +5,7 @@ import { Audio } from 'react-loader-spinner';
 import fetch from 'services/fetch';
 import List from 'components/List/List';
 import { Link, useSearchParams, useLocation } from "react-router-dom";
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const Movies = () => {
   const [movieList, setMovieList] = useState([]);
@@ -54,7 +54,7 @@ const Movies = () => {
     if (query !== null) {
     fetchMovies(query)
     };
-  }, [query]);
+  }, [(query)]);
   
   const location = useLocation();
   const renderMovies = (movieList) => {
@@ -78,7 +78,9 @@ const Movies = () => {
 }
 
 Movies.propTypes = {
-
+  onSubmit: PropTypes.func,
+  visible: PropTypes.bool,
+  children: PropTypes.element,
 }
 
 export default Movies

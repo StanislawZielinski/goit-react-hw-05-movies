@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const TrendingList = ({children}) => {
   return (
@@ -10,7 +10,7 @@ const TrendingList = ({children}) => {
 }
 
 TrendingList.propTypes = {
-
+  children: PropTypes.element,
 }
 
 export default TrendingList

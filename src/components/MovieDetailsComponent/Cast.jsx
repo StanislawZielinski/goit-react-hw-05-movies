@@ -2,7 +2,7 @@ import React from 'react';
 import fetchCast from 'services/fetchCast';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const Cast = props => {
   const { id } = useParams();
@@ -41,7 +41,7 @@ const Cast = props => {
 }
 
 Cast.propTypes = {
-
+  renderCast: PropTypes.element,
 }
 
 export default Cast
