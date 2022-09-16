@@ -19,12 +19,13 @@ const Review = props => {
   useEffect(() => {
     fetchCastReview(id);
   }, [id]);
+
   const renderReview = (review) => {
     return review.map(
-      elem =>
-        <li key={elem.id}>
-          <h5>{elem.author}</h5>
-          <p>{elem.content}</p>
+      ({id,author,content}) =>
+        <li key={id}>
+          <h5>{author}</h5>
+          <p>{content}</p>
         </li>
     )
   }
